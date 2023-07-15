@@ -1,0 +1,84 @@
+<apex:page controller="ExamPageController" showHeader="false" sidebar="false">
+    <apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockSection >
+             <apex:image url="{!URLFOR($Resource.Exam)}" height="250:px;" width="1470:px;"/>
+        
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="actionPoller example" collapsible="false" columns="1">
+            
+              <apex:actionPoller action="{!callMethod}" reRender="out" interval="5"/>
+              <apex:outputText value="{!counter}" label="time Left:" id="out"/>
+            </apex:pageBlockSection>
+        <apex:pageBlockSection >
+            
+            
+            <b>
+            <h1>Each correct answer rewards 5 marks and each wrong answer  negative  2 marks</h1>
+            </b>
+            <br/> <br/>
+             <apex:pageMessages ></apex:pageMessages>
+             </apex:pageBlockSection>
+            <apex:pageBlockSection title="1. A person crosses a 600 m long street in 5 minutes. What is his speed in km per hour" collapsible="false">
+            <apex:selectRadio value="{!value1}" layout="pagedirection" >
+              <apex:selectOptions value="{!question1}">
+                  
+            </apex:selectOptions>
+                     
+         </apex:selectRadio>
+       
+        
+        </apex:pageBlockSection>
+        
+            <apex:pageBlockSection title="2. An aeroplane covers a certain distance at a speed of 240 kmph in 5 hours. To cover the same distance in 1 hours, it must travel at a speed of:" collapsible="false">
+            <apex:selectRadio value="{!value2}" layout="pagedirection" >
+              <apex:selectOptions value="{!question2}">
+                  
+            </apex:selectOptions>
+                     
+         </apex:selectRadio>
+       
+        
+        </apex:pageBlockSection>
+     
+            <apex:pageBlockSection title="3. A train running at the speed of 60 km/hr crosses a pole in 9 seconds. What is the length of the train?">
+            <apex:selectRadio value="{!value3}" layout="pagedirection" >
+              <apex:selectOptions value="{!question3}">
+                  
+            </apex:selectOptions>
+                     
+         </apex:selectRadio>
+       
+        
+        </apex:pageBlockSection>
+         <apex:pageBlockSection title="4. A mixture contains alcohol and water in the ratio 4 : 3. If 5 liters of water is added to the mixture, the ratio becomes 4: 5. Find the quantity of alcohol in the given mixture.">
+            <apex:selectRadio value="{!value4}" layout="pagedirection" >
+              <apex:selectOptions value="{!question4}">
+                  
+            </apex:selectOptions>
+                     
+         </apex:selectRadio>
+       
+        
+        </apex:pageBlockSection>
+                 
+          
+              <apex:pageblockbuttons location="bottom">
+                  
+                 
+                  <apex:commandButton value="Submit" action="{!Submit}"/>
+                  </apex:pageblockbuttons>
+
+        
+        
+        
+        
+        
+        
+        
+        
+        </apex:pageBlock>
+    
+    
+    </apex:form>
+</apex:page>

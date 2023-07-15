@@ -1,0 +1,15 @@
+<apex:page controller="welcomeController" showHeader="false" sidebar="false">
+    <apex:image url="{!URLFOR($Resource.BisonEnglish)}" height="80:px;" width="1600:px;"/>
+    <br/><br/><br/>
+    
+  
+    <apex:form >
+    <apex:selectRadio label="Language" value="{!selectedlanguage}" StyleClass="radioB" layout="pagedirection" style="vertical-align: middle; margin-left:30%;">
+              <apex:selectOptions value="{!languages}">
+            </apex:selectOptions>
+                 <apex:actionSupport event="onclick" action="{!GOMethod}"/>
+         </apex:selectRadio>
+        </apex:form>
+       <br/><br/><br/>
+     <apex:image url="{!URLFOR($Resource.BisonFrench)}" height="80:px;" width="1600:px;"/>
+</apex:page>

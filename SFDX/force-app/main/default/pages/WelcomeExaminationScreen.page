@@ -1,0 +1,36 @@
+<apex:page controller="WelcomeExaminationScreenCont" showHeader="false" sidebar="false">
+    <apex:form >
+       <apex:pageBlock >
+           <apex:pageBlockSection >
+               <apex:image url="{!URLFOR($Resource.BisonFrench)}" height="120:px;" width="1600:px;"/>
+               </apex:pageBlockSection>
+           <apex:pageBlockSection >
+               <b>      <h1> Welcome To Xcent exam  please Enter your Username and Password</h1></b>
+                    
+        <apex:pageMessages ></apex:pageMessages>
+                </apex:pageBlockSection>
+           
+           <apex:pageBlockSection title="Login Credential">
+           
+        
+      
+            <apex:inputText label="User Name" value="{!userid}"/>
+               <br/><br/>
+         <apex:inputSecret label="Password" value="{!password}"/>
+           
+           
+       
+               </apex:pageBlockSection>
+
+             
+           
+          
+              <apex:pageblockbuttons location="bottom">
+                   <apex:commandButton value="Register" action="{!RegisterMethod}"/>
+                  
+                  <apex:commandButton value="Submit" action="{!Submit}"/>
+                  </apex:pageblockbuttons>
+           
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

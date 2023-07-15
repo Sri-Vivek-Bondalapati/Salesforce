@@ -1,0 +1,24 @@
+<apex:page controller="CaseCreateController" sidebar="false" showHeader="false" language="{!currentlang}">
+    <apex:form >
+        <apex:pageblock >
+      <apex:outputpanel id="imgEN" rendered="{!currentlang =='en'}">                
+                  <apex:image url="{!URLFOR($Resource.BisonEnglish)}" height="80:px;" width="1600:px;"/>
+                </apex:outputpanel>
+                <apex:outputpanel id="imgFR" rendered="{!currentlang =='fr'}">                
+                  <apex:image url="{!URLFOR($Resource.BisonFrench)}" height="80:px;" width="1600:px;"/>
+       </apex:outputpanel>
+    
+    <br/><br/>  <br/><br/>
+    
+    
+                      <center>   <h1>
+                          <b>{!$Label.Customer_Request}</b>
+    </h1></center> 
+   
+        <apex:pageblocksection >
+         <apex:inputfield label="{!$Label.Requester_First_Name}" value="{!caseobj.Requester_First_Name__c}"/><br/><br/>
+         <apex:inputfield label="{!$Label.Requester_Last_Name}" value="{!caseobj.Requester_Last_Name__c}"/><br/><br/>
+    </apex:pageblocksection>
+            </apex:pageblock>
+        </apex:form>
+</apex:page>

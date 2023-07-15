@@ -1,0 +1,32 @@
+<apex:page controller="LoginRegistrationController"   docType="html-5.0" showHeader="false" sidebar="false">
+    <apex:form >
+        <apex:pageBlock >
+           
+        <apex:pageMessages ></apex:pageMessages>
+             <apex:pageblocksection title="Login Details" columns="1">
+        <apex:input label="Username" value="{!usernamevalue}" style="width:200px" >
+            </apex:input>
+        <apex:inputSecret label="Password" value="{!passvalue}" style="width:200px" >
+            </apex:inputSecret>
+      <apex:inputSecret label="ConfirmPassword" value="{!Confirmpassvalue}" style="width:200px">
+     </apex:inputSecret>
+                 </apex:pageblocksection>
+            
+            <apex:pageblockbuttons location="bottom">
+                
+            <apex:commandButton value="Save" action="{!savemethod}" />
+                   <apex:commandButton value="back" action="{!WelcomeExamination}" />
+                
+               
+                
+        </apex:pageblockbuttons>
+    
+    </apex:pageBlock>
+    
+    </apex:form>
+    
+    
+    
+    
+    
+</apex:page>

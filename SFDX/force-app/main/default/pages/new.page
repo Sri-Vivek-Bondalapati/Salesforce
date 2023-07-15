@@ -1,0 +1,34 @@
+<apex:page standardController="Account" showHeader="false" sidebar="false" title="Account">
+    <apex:form title="Form title">
+    <h1 >
+        <font size ="5">
+        <center>
+            <b>
+        Account page Details </b></center>
+            </font>
+        </h1>
+        
+
+     <apex:pageBlock title="Page BLock Title">
+          <apex:pageBlockSection title="PB section 1">
+              <apex:inputText label="Account Name" value="{!Account.Name}"></apex:inputText>
+              
+               <apex:inputText label="Account Industry" value="{!Account.Industry}"></apex:inputText>
+             
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="PB section 2">
+                 <apex:inputField label="Account Name" value="{!Account.name}"></apex:inputField>
+                 <apex:inputField label="Account Industry" value="{!Account.industry}"></apex:inputField>
+        </apex:pageBlockSection>
+        
+       <apex:pageblockbuttons location="bottom">
+           
+           <apex:commandbutton value="SUBMIT" action="{!save}"></apex:commandbutton>
+        </apex:pageblockbuttons>
+        
+    </apex:pageBlock>
+            </apex:form>
+      
+
+    
+</apex:page>

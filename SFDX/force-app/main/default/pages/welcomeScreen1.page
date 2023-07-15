@@ -1,0 +1,15 @@
+<apex:page controller="welcomeControllerr" sidebar="false" showHeader="false">
+    <apex:form >
+    
+    <apex:pageblock >
+        <center>
+        <apex:selectRadio label="Select Language" value="{!selectedlanguage}" layout="pagedirection" >
+              <apex:selectOptions value="{!languages}">
+                  
+            </apex:selectOptions>
+                     <apex:actionSupport event="onclick" action="{!GOMethod}"/>
+         </apex:selectRadio>
+            </center>
+    </apex:pageblock>
+        </apex:form>
+</apex:page>

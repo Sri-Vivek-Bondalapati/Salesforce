@@ -1,0 +1,20 @@
+<apex:page controller="ResultPageController" sidebar="false" showHeader="false">
+    <apex:pageBlock >
+        <apex:pageBlockSection >
+        
+        <apex:image url="{!URLFOR($Resource.ThankYou)}" height="150:px;" width="800:px;"/>
+        
+        
+        </apex:pageBlockSection>
+        
+        
+        
+    <apex:pageBlockSection >
+        <b>
+        Your Examination Result is :
+        <apex:outputLabel title="Result"  value="{!Res}" ></apex:outputLabel>
+        </b>
+        
+    </apex:pageBlockSection>
+        </apex:pageBlock>
+</apex:page>
