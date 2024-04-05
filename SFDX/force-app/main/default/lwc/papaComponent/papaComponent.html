@@ -1,0 +1,15 @@
+<template>
+    
+        <template if:false={showBeta}>
+            <div class={papaClass}>
+            <lightning-button label="Show Beta" onclick={handleShowBeta}></lightning-button>
+        </div>
+        </template>
+        
+        <template if:true={showBeta}>
+            <div class ={childClass}>
+                <c-beta-component onclose={handleBetaClose}></c-beta-component>
+            </div>
+            
+        </template>
+</template>
