@@ -1,0 +1,75 @@
+<!--
+@description       : This component displays the Navigation Bar on the Community Page.
+@last modified on  : 03-07-2024
+-->
+<template>
+    <div class="slds-context-bar">
+      <nav class="slds-context-bar__secondary" role="navigation">
+        <ul class="slds-grid">
+          <!-- Home Tab-->
+          <li class={isHomeSelected}>
+            <a
+              href="https://mail.google.com/"
+              class="slds-context-bar__label-action"
+              data-name="HOME"
+              onclick={handleNavigation}
+            >
+              <span class="slds-assistive-text">Current Page:</span>
+              <span class="slds-truncate" title="HOME">"Home"</span>
+            </a>
+          </li>
+          <!-- My Dashboard tab, visible only for authenticated users-->
+          <template if:false={isGuestUser}>
+            <li class={isDashboardSelected}>
+              <a
+                href="https://mail.google.com/"
+                class="slds-context-bar__label-action"
+                data-name="MY_DASHBOARD"
+                onclick={handleNavigation}
+              >
+                <span class="slds-truncate" title={labels.GM_My_Dashboard}
+                  >{labels.GM_My_Dashboard}</span
+                >
+              </a>
+            </li>
+          </template>
+          <!-- My Contact Us tab, visible only for authenticated users-->
+          <template if:false={isGuestUser}>
+            <li class={isContactUsSelected}>
+              <a
+                href={labels.GM_Contact_Us_Url}
+                class="slds-context-bar__label-action"
+                data-name="CONTACT_US"
+                onclick={handleNavigation}
+              >
+                <span class="slds-truncate" title="CONTACT_US"
+                  >CONTACT_US</span
+                >
+              </a>
+            </li>
+          </template>
+          <!-- Additional Navigation Item Application/Award visible for authenticated users-->
+          <template if:false={isGuestUser}>
+            <template
+              if:true={isAdditionalNavItemSelected.showAdditionalNavItem}
+            >
+              <li class={isAdditionalNavItemSelected.class}>
+                <a
+                  href="#"
+                  class="slds-context-bar__label-action"
+                  title={isAdditionalNavItemSelected.additionalNavItemLabel}
+                  onclick={handleNavigation}
+                >
+                  <span
+                    class="slds-truncate"
+                    title={isAdditionalNavItemSelected.additionalNavItemLabel}
+                    >{isAdditionalNavItemSelected.additionalNavItemLabel}</span
+                  >
+                </a>
+              </li>
+            </template>
+          </template>
+        </ul>
+      </nav>
+    </div>
+  </template>
